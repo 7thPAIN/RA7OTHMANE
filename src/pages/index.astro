@@ -1,5 +1,5 @@
 ---
-import "../styles.css";
+import BaseLayout from "../layouts/BaseLayouts.astro";
 import DogPics from '../components/DogPics.astro';
 const title = "Hello world !!";
 const imageError = 
@@ -19,6 +19,7 @@ const dogImageUrls = response?.message ?? [imageError];
 		<title>Astro</title>
 	</head>
 	<body>
+		<BaseLayout title="Home">
 		<h1>{title}</h1>
 		<DogPics urls={dogImageUrls} />
 		 <div>
@@ -27,6 +28,9 @@ const dogImageUrls = response?.message ?? [imageError];
    		<div>
 		  <img id="cat-image" style="max-width: 400px; height: auto;"/>
     	</div>
+		<a href="/about">Go to about page</a>
+		</BaseLayout>
+			
 	</body>
 </html>
 <script>
